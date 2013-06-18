@@ -13,12 +13,12 @@
 enum EProductOperationType {
     AddProduct,
     EditProduct
-    };
+};
 
 @interface MMProductDetailViewController : UITableViewController <UITextFieldDelegate>
 
 @property enum EProductOperationType OperationType;
-@property (strong, nonatomic) MMProduct * product;
+@property (strong, nonatomic) MMProduct *product;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 

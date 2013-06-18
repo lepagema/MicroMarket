@@ -10,6 +10,7 @@
 #import "MMMarketDataController.h"
 #import "MMAmountFormatter.h"
 #import "MMCustomer.h"
+#import "MMAddCustomerDetailViewController.h"
 
 @interface MMCustomersViewController ()
 
@@ -35,34 +36,19 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataController customerCount] + 1;
+    return [self.dataController customerCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
-    double balance;
-    
-    if (indexPath.row == 0)
-    {
-        static NSString *TotalCellIdentifier = @"TotalCell";
-        cell = [tableView dequeueReusableCellWithIdentifier:TotalCellIdentifier];
+    static NSString *CustomerCellIdentifier = @"CustomerCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomerCellIdentifier];
         
-        balance = 0.0; // to init correctly
+    MMCustomer *customer = [self.dataController customerAtIndex:indexPath.row];
+    double balance = customer.balance.doubleValue;
         
-        [cell.detailTextLabel setText:[MMAmountFormatter textFromAmount:[[NSDecimalNumber alloc] initWithDouble:balance]]];
-    }
-    else
-    {
-        static NSString *CustomerCellIdentifier = @"CustomerCell";
-        cell = [tableView dequeueReusableCellWithIdentifier:CustomerCellIdentifier];
-        
-        MMCustomer *customer = [self.dataController customerAtIndex:indexPath.row - 1];
-        balance = customer.balance.doubleValue;
-        
-        [cell.textLabel setText:customer.name];
-        [cell.detailTextLabel setText:[MMAmountFormatter textFromAmount:customer.balance]];
-    }
+    [cell.textLabel setText:customer.name];
+    [cell.detailTextLabel setText:[MMAmountFormatter textFromAmount:customer.balance]];
 
     UIColor *balanceTextColor;
     if (balance >= 0.0)
@@ -75,7 +61,7 @@
     }
     
     cell.detailTextLabel.textColor = balanceTextColor;
-    
+
     return cell;
 }
 
@@ -85,7 +71,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.dataController removeCustomerAtIndex:indexPath.row - 1];
+        [self.dataController removeCustomerAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -93,7 +79,7 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    [self.dataController moveCustomerAtIndex:fromIndexPath.row - 1 toIndex:toIndexPath.row - 1];
+    [self.dataController moveCustomerAtIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 #pragma mark - Segue
@@ -116,22 +102,14 @@
 
 -(IBAction)done:(UIStoryboardSegue *)segue
 {
-//    if ([[segue identifier] isEqualToString:@"ReturnProductInput"])
-//    {
-//        MMProductDetailViewController * detailController = [segue sourceViewController];
-//        
-//        if (detailController.OperationType == AddProduct)
-//        {
-//            [self.dataController addProduct:detailController.product];
-//        }
-//        //        else if (detailController.OperationType == EditProduct)
-//        //        {
-//        //
-//        //        }
-//        
-//        [self.tableView reloadData];
-//        [self dismissViewControllerAnimated:YES completion:NULL];
-//    }
+    if ([[segue identifier] isEqualToString:@"ReturnAddCustomerInput"])
+    {
+        MMAddCustomerDetailViewController * detailController = [segue sourceViewController];
+        
+        [self.dataController addCustomer:detailController.customer];
+        [self.tableView reloadData];
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 -(IBAction)cancel:(UIStoryboardSegue *)segue

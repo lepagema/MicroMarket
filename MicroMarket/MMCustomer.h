@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) NSDecimalNumber *balance;
 
+-(id)initWithName:(NSString*) name;
 -(id)initWithName:(NSString*) name balance:(NSDecimalNumber*) balance;
 
 @end

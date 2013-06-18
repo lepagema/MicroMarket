@@ -34,6 +34,7 @@
 		0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */; };
 		0D675ED2176E3D7A00C0E7E7 /* MMCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED1176E3D7900C0E7E7 /* MMCustomer.m */; };
 		0D675ED5176E400D00C0E7E7 /* MMAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED4176E400D00C0E7E7 /* MMAmountFormatter.m */; };
+		0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		0D675ED1176E3D7900C0E7E7 /* MMCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCustomer.m; sourceTree = "<group>"; };
 		0D675ED3176E400D00C0E7E7 /* MMAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAmountFormatter.h; sourceTree = "<group>"; };
 		0D675ED4176E400D00C0E7E7 /* MMAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAmountFormatter.m; sourceTree = "<group>"; };
+		0D675ED9177018B700C0E7E7 /* MMAddCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAddCustomerDetailViewController.h; sourceTree = "<group>"; };
+		0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAddCustomerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */,
 				0D675E50176A599E00C0E7E7 /* MMCustomersViewController.h */,
 				0D675E51176A599E00C0E7E7 /* MMCustomersViewController.m */,
+				0D675ED9177018B700C0E7E7 /* MMAddCustomerDetailViewController.h */,
+				0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */,
 				0D675E4C176A599E00C0E7E7 /* first.png */,
 				0D675E4E176A599E00C0E7E7 /* first@2x.png */,
 				0D675E53176A599E00C0E7E7 /* second.png */,
@@ -330,6 +335,7 @@
 				0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */,
 				0D675ED2176E3D7A00C0E7E7 /* MMCustomer.m in Sources */,
 				0D675ED5176E400D00C0E7E7 /* MMAmountFormatter.m in Sources */,
+				0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

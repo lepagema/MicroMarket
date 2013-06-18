@@ -12,21 +12,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yVq-bO-spq">
-                            <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Debug: Refresh from cache">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="buttonTouchUpInside:" destination="2" eventType="touchUpInside" id="lOn-zR-SfB"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" textLabel="lVJ-wg-CW9" detailTextLabel="hUB-B7-GlH" style="IBUITableViewCellStyleValue1" id="oZ9-Ki-5Lh">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -59,7 +44,7 @@
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <navigationItem key="navigationItem" title="µMarket" id="qtY-zt-Zna">
+                    <navigationItem key="navigationItem" title="Products" id="qtY-zt-Zna">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oqg-g5-hbP">
                             <connections>
                                 <segue destination="rDl-bc-v2j" kind="modal" identifier="AddProduct" id="Rnp-Ql-sn4"/>
@@ -168,6 +153,72 @@
             </objects>
             <point key="canvasLocation" x="2205" y="-138"/>
         </scene>
+        <!--Add Customer Detail View Controller-->
+        <scene sceneID="hi4-hK-8vs">
+            <objects>
+                <tableViewController id="EqE-23-Iwz" customClass="MMAddCustomerDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3yU-OR-cUd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name:" id="qtZ-Ah-4en">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cZe-TC-W7m">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Customer Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-rW-QrL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="1L3-9G-1Nw"/>
+                                                        <constraint firstAttribute="width" constant="260" id="TxP-8S-HB0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="EqE-23-Iwz" id="Tnx-Ft-O5V"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VHA-rW-QrL" firstAttribute="centerX" secondItem="cZe-TC-W7m" secondAttribute="centerX" type="default" id="B4A-2e-WeG"/>
+                                            <constraint firstItem="VHA-rW-QrL" firstAttribute="centerY" secondItem="cZe-TC-W7m" secondAttribute="centerY" type="default" id="rlH-ph-YkK"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EqE-23-Iwz" id="e1v-Rn-ooK"/>
+                            <outlet property="delegate" destination="EqE-23-Iwz" id="Gi7-Ka-Hyr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cvs-Zf-Gui">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="J04-pY-o38">
+                            <connections>
+                                <segue destination="icu-Pg-HNU" kind="unwind" identifier="CancelAddCustomerInput" unwindAction="cancel:" id="Jp8-Rk-fib"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="s1r-8C-YF5">
+                            <connections>
+                                <segue destination="icu-Pg-HNU" kind="unwind" identifier="ReturnAddCustomerInput" unwindAction="done:" id="AUO-xU-7Cd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customerTextField" destination="VHA-rW-QrL" id="7Ta-M4-XDI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQn-iQ-mL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="icu-Pg-HNU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2205" y="596"/>
+        </scene>
         <!--Customers View Controller - Second-->
         <scene sceneID="13">
             <objects>
@@ -176,46 +227,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LIk-L0-nB8">
-                            <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Debug: Refresh from cache">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="buttonTouchUpInside:" destination="3" eventType="touchUpInside" id="Xq7-ji-PiY"/>
-                            </connections>
-                        </button>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TotalCell" textLabel="3My-a5-Ujq" detailTextLabel="xhk-f9-uCf" style="IBUITableViewCellStyleValue1" id="vjd-x1-X6r">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Total Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3My-a5-Ujq">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhk-f9-uCf">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CustomerCell" textLabel="6M4-yt-5ev" detailTextLabel="ppn-5N-Ihl" style="IBUITableViewCellStyleValue1" id="Neo-fD-iWJ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -241,8 +255,12 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="µMarket" id="SMW-oa-UAN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4qR-r5-5ml"/>
+                    <navigationItem key="navigationItem" title="Customers" id="SMW-oa-UAN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4qR-r5-5ml">
+                            <connections>
+                                <segue destination="85k-U5-Oa4" kind="modal" id="kgl-ST-Wv4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
@@ -324,16 +342,42 @@
             </objects>
             <point key="canvasLocation" x="1679" y="-138"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OI5-iT-pxk">
+            <objects>
+                <navigationController id="85k-U5-Oa4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="TuZ-eW-Oy2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EqE-23-Iwz" kind="relationship" relationship="rootViewController" id="3as-mA-xmc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSf-4D-IpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="596"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first.png" width="30" height="30"/>
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="MMAddCustomerDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MMAddCustomerDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="customerTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="MMCustomersViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MMCustomersViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonTouchUpInside:"/>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
             </relationships>
         </class>
         <class className="MMProductDetailViewController" superclassName="UITableViewController">

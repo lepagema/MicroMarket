@@ -11,6 +11,19 @@
 
 @implementation MMCustomer
 
+-(id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _name = @"";
+        _balance = [[NSDecimalNumber alloc] initWithDouble:0.0];
+    }
+    
+    return self;
+}
+
 -(id)initWithName:(NSString*) name balance:(NSDecimalNumber*) balance
 {
     self = [super init];
@@ -19,6 +32,19 @@
     {
         _name = [name copy];
         _balance = [MMAmountFormatter roundAmount:balance];
+    }
+    
+    return self;
+}
+
+-(id)initWithName:(NSString*) name
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _name = [name copy];
+        _balance = [[NSDecimalNumber alloc] initWithDouble:0.0];
     }
     
     return self;
