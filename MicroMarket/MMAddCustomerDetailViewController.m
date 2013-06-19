@@ -47,9 +47,9 @@
 {
     if ([[segue identifier] isEqualToString:@"ReturnAddCustomerInput"])
     {
-        if (self.customerTextField.text.length)
+        if (self.nameTextField.text.length)
         {
-            NSString *name = self.customerTextField.text;
+            NSString *name = self.nameTextField.text;
             self.customer = [[MMCustomer alloc] initWithName:name];
         }
     }

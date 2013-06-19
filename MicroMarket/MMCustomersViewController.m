@@ -86,17 +86,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    UINavigationController *navigationController = [segue destinationViewController];
-//    id detailController = navigationController.topViewController;
-//    
-//    if ([[segue identifier] isEqualToString:@"AddProduct"])
+    UINavigationController *navigationController = [segue destinationViewController];
+    id detailController = navigationController.topViewController;
+    
+    if([[segue identifier] isEqualToString:@"EditCustomer"])
+    {
+        [detailController setCustomer:[self.dataController customerAtIndex:[self.tableView indexPathForSelectedRow].row]];
+        [detailController setProducts:[self.dataController products]];
+    }
+//    else if ([[segue identifier] isEqualToString:@"AddCustomer"])
 //    {
-//        [detailController setOperationType:AddProduct];
-//    }
-//    else if([[segue identifier] isEqualToString:@"EditProduct"])
-//    {
-//        [detailController setProduct:[self.dataController productAtIndex:[self.tableView indexPathForSelectedRow].row]];
-//        [detailController setOperationType:EditProduct];
 //    }
 }
 
@@ -107,17 +106,21 @@
         MMAddCustomerDetailViewController * detailController = [segue sourceViewController];
         
         [self.dataController addCustomer:detailController.customer];
-        [self.tableView reloadData];
-        [self dismissViewControllerAnimated:YES completion:NULL];
     }
+//    else if ([[segue identifier] isEqualToString:@"ReturnEditCustomerInput"])
+//    {
+//    }
+    
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)cancel:(UIStoryboardSegue *)segue
 {
-//    if ([[segue identifier] isEqualToString:@"CancelProductInput"])
-//    {
-//        [self dismissViewControllerAnimated:YES completion:NULL];
-//    }
+    if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"] || [[segue identifier] isEqualToString:@"CancelEditCustomerInput"])
+    {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 #pragma mark - Temp for debug

@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="2205" y="-138"/>
         </scene>
-        <!--Add Customer Detail View Controller-->
+        <!--Add Customer Detail View Controller - Add Customer-->
         <scene sceneID="hi4-hK-8vs">
             <objects>
                 <tableViewController id="EqE-23-Iwz" customClass="MMAddCustomerDetailViewController" sceneMemberID="viewController">
@@ -198,7 +198,7 @@
                             <outlet property="delegate" destination="EqE-23-Iwz" id="Gi7-Ka-Hyr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cvs-Zf-Gui">
+                    <navigationItem key="navigationItem" title="Add Customer" id="cvs-Zf-Gui">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="J04-pY-o38">
                             <connections>
                                 <segue destination="icu-Pg-HNU" kind="unwind" identifier="CancelAddCustomerInput" unwindAction="cancel:" id="Jp8-Rk-fib"/>
@@ -212,6 +212,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="customerTextField" destination="VHA-rW-QrL" id="7Ta-M4-XDI"/>
+                        <outlet property="nameTextField" destination="VHA-rW-QrL" id="Vm7-iP-gBf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQn-iQ-mL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,13 +253,16 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="6yR-ag-NpI" kind="modal" identifier="EditCustomer" id="JqT-TL-H1B"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Customers" id="SMW-oa-UAN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4qR-r5-5ml">
                             <connections>
-                                <segue destination="85k-U5-Oa4" kind="modal" id="kgl-ST-Wv4"/>
+                                <segue destination="85k-U5-Oa4" kind="modal" identifier="AddCustomer" id="kgl-ST-Wv4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -360,6 +364,131 @@
             </objects>
             <point key="canvasLocation" x="1679" y="596"/>
         </scene>
+        <!--Edit Customer Detail View Controller - Edit Customer-->
+        <scene sceneID="LNw-1A-Suu">
+            <objects>
+                <tableViewController id="25s-fC-fXB" customClass="MMEditCustomerDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="GTv-7B-eMN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name:" id="tlf-8q-kiB">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rAK-cW-HjB">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Customer Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mEQ-kh-dYt">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="5Vx-hY-eSY"/>
+                                                        <constraint firstAttribute="height" constant="30" id="nnB-9n-fhB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="mEQ-kh-dYt" firstAttribute="centerY" secondItem="rAK-cW-HjB" secondAttribute="centerY" type="default" id="Wko-hY-wMR"/>
+                                            <constraint firstItem="mEQ-kh-dYt" firstAttribute="centerX" secondItem="rAK-cW-HjB" secondAttribute="centerX" type="default" id="gcJ-qu-99r"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="New Payment:" id="5sf-pz-QOl">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NkT-Fc-N5B">
+                                        <rect key="frame" x="0.0" y="138" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="New Purchase:" id="S0X-9x-VDa">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2gE-pt-hLT">
+                                        <rect key="frame" x="0.0" y="230" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J1c-Tx-0tp">
+                                        <rect key="frame" x="0.0" y="275" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bjF-L2-Ahc">
+                                        <rect key="frame" x="0.0" y="319" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="25s-fC-fXB" id="gmm-l8-0Ev"/>
+                            <outlet property="delegate" destination="25s-fC-fXB" id="FLP-9u-Z4h"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Customer" id="guN-ve-O8U">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z4Y-V6-XYX">
+                            <connections>
+                                <segue destination="klG-Xy-jKR" kind="unwind" identifier="CancelEditCustomerInput" unwindAction="cancel:" id="NpE-WP-FRv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Mtc-mP-Unr">
+                            <connections>
+                                <segue destination="klG-Xy-jKR" kind="unwind" identifier="ReturnEditCustomerInput" unwindAction="done:" id="rGG-Lg-dDn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="mEQ-kh-dYt" id="Rmo-tA-Dmn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pI-Ug-svT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="klG-Xy-jKR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2205" y="1352"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eia-NV-ZRb">
+            <objects>
+                <navigationController id="6yR-ag-NpI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="ssL-3a-Yvv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="25s-fC-fXB" kind="relationship" relationship="rootViewController" id="XPQ-RZ-LAi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcJ-kv-5eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="1352"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first.png" width="30" height="30"/>
@@ -369,7 +498,7 @@
         <class className="MMAddCustomerDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MMAddCustomerDetailViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="customerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MMCustomersViewController" superclassName="UITableViewController">
@@ -378,6 +507,12 @@
                 <relationship kind="action" name="buttonTouchUpInside:"/>
                 <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="MMEditCustomerDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MMEditCustomerDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MMProductDetailViewController" superclassName="UITableViewController">
