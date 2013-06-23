@@ -1,5 +1,5 @@
 //
-//  MMMarketDataController.h
+//  MarketDataController.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 14.06.13.
@@ -8,24 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@class MMProduct;
-@class MMCustomer;
+@class Product;
+@class Customer;
 
-@interface MMMarketDataController : NSObject
-
-@property (nonatomic, copy) NSMutableArray *products;
-@property (nonatomic, copy) NSMutableArray *customers;
+@interface MarketDataController : NSObject
 
 -(NSUInteger)productCount;
--(MMProduct*)productAtIndex:(NSUInteger)index;
+-(Product*)productAtIndex:(NSUInteger)index;
 -(void)moveProductAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 -(void)removeProductAtIndex:(NSUInteger)index;
--(void)addProduct:(MMProduct*)product;
+-(void)addProductWithName:(NSString*)name price:(NSDecimalNumber*)price;
 
 -(NSUInteger)customerCount;
--(MMCustomer*)customerAtIndex:(NSUInteger)index;
+-(Customer*)customerAtIndex:(NSUInteger)index;
 -(void)moveCustomerAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 -(void)removeCustomerAtIndex:(NSUInteger)index;
--(void)addCustomer:(MMCustomer*)customer;
+-(void)addCustomerWithName:(NSString*)name;
+
+-(void)saveData;
 
 @end

@@ -7,9 +7,15 @@
 //
 
 #import "MMEditCustomerDetailViewController.h"
-#import "MMCustomer.h"
+#import "MarketDataController.h"
+#import "Customer.h"
+#import "Product.h"
+#import "AmountFormatter.h"
 
 @interface MMEditCustomerDetailViewController ()
+{
+    Product *oneAndOnlyProduct;
+}
 
 @end
 
@@ -33,11 +39,31 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+//    [self.tableView registerClass:[self.nameCell class] forCellReuseIdentifier:@"NameCell"];
+//    [self.tableView registerClass:[self.paymentCell class] forCellReuseIdentifier:@"PaymentCell"];
+//    [self.tableView registerClass:[self.purchaseCell class] forCellReuseIdentifier:@"PurchaseCell"];
+    
+    self.nameTextField.delegate = self;
+    self.paymentTextField.delegate = self;
+    
+    [self.productStepper addTarget:self action:@selector(stepperValueChangedHandler) forControlEvents:UIControlEventValueChanged];
     
     if (self.customer)
     {
         self.nameTextField.text = self.customer.name;
-//        self.priceTextField.text = [MMAmountFormatter editTextFromAmount:self.product.price];
+    }
+    
+    if (self.dataController &&  [self.dataController productCount] > 0)
+    {
+        oneAndOnlyProduct = [self.dataController productAtIndex:0];
+        self.productLabel.text = oneAndOnlyProduct.name;
+        self.productStepper.enabled = true;
+    }
+    else
+    {
+        self.productLabel.text = @"no product";
+        self.productStepper.enabled = false;
     }
 }
 
@@ -45,6 +71,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)stepperValueChangedHandler
+{
+    static NSNumberFormatter *formatter = nil;
+
+    if (formatter == nil)
+    {
+        formatter = [[NSNumberFormatter alloc] init];
+    }
+    
+    NSNumber *productCount = [[NSNumber alloc] initWithDouble:self.productStepper.value];
+    self.procuctCountLabel.text = [formatter stringFromNumber:productCount];
 }
 
 #pragma mark - Table view data source
@@ -58,19 +97,39 @@
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 //{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
+//    switch (section) {
+//        case 0:
+//        case 1:
+//            return 1;
+//            
+//        case 2:
+//            return self.products.count;
+//            
+//        default:
+//            return 0;
+//    }
+//    
 //}
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
+//    static NSString *NameCellIdentifier = @"NameCell";
+//    static NSString *PaymentCellIdentifier = @"PaymentCell";
+//    static NSString *PurchaseCellIdentifier = @"PurchaseCell";
+//
+//    switch (indexPath.section) {
+//        case 0:
+//            return [tableView dequeueReusableCellWithIdentifier:NameCellIdentifier forIndexPath:indexPath];
+//            
+//        case 1:
+//            return [tableView dequeueReusableCellWithIdentifier:PaymentCellIdentifier forIndexPath:indexPath];
+//            
+//        case 2:
+//            return [tableView dequeueReusableCellWithIdentifier:PurchaseCellIdentifier forIndexPath:indexPath];
+//            
+//        default:
+//            return nil;
+//    }
 //}
 
 /*
@@ -135,6 +194,21 @@
         {
             self.customer.name = self.nameTextField.text;
         }
+
+        if (self.paymentTextField.text.length)
+        {
+            NSDecimalNumber *payment = [AmountFormatter amountFromEditText:self.paymentTextField.text];
+            self.customer.balance = [self.customer.balance decimalNumberByAdding:payment];
+        }
+        
+        if (self.productStepper.enabled)
+        {
+            NSDecimalNumber *productCount = [[NSDecimalNumber alloc] initWithDouble:self.productStepper.value];
+            NSDecimalNumber *totalPurchase = [oneAndOnlyProduct.price decimalNumberByMultiplyingBy:productCount];
+            self.customer.balance = [self.customer.balance decimalNumberBySubtracting:totalPurchase];
+        }
+        
+        [self.dataController saveData];
     }
     //    else if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"])
     //    {
@@ -147,6 +221,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.paymentTextField)
+    {
+        self.paymentTextField.text = [AmountFormatter reformatEditText:self.paymentTextField.text];
+    }
 }
 
 @end

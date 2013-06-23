@@ -1,5 +1,5 @@
 //
-//  MMAmountFormatter.h
+//  AmountFormatter.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 16.06.13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MMAmountFormatter : NSObject
+@interface AmountFormatter : NSObject
 
 +(NSString*)textFromAmount:(NSDecimalNumber*)amount;
 +(NSString*)editTextFromAmount:(NSDecimalNumber*)amount;

@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class MMMarketDataController;
+@class MarketDataController;
 
 @interface MMProductsViewController : UITableViewController
+{
+//    NSMutableArray *products;
+//    NSManagedObjectContext *managedObjectContext;
+}
 
-@property (weak, nonatomic) MMMarketDataController *dataController;
+@property (weak, nonatomic) MarketDataController *dataController;
+
+//@property (nonatomic, copy) NSMutableArray *products;
+//@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 - (IBAction)buttonTouchUpInside:(id)sender;
 
 @end

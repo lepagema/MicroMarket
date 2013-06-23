@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MMCustomer;
+@class MarketDataController;
 
 @interface MMAddCustomerDetailViewController : UITableViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) MMCustomer *customer;
+@property (weak, nonatomic) MarketDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 

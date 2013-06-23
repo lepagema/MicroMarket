@@ -8,17 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class MMProduct;
-
-enum EProductOperationType {
-    AddProduct,
-    EditProduct
-};
+@class MarketDataController;
+@class Product;
 
 @interface MMProductDetailViewController : UITableViewController <UITextFieldDelegate>
 
-@property enum EProductOperationType OperationType;
-@property (strong, nonatomic) MMProduct *product;
+@property (weak, nonatomic) Product *product;
+@property (weak, nonatomic) MarketDataController *dataController;
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 

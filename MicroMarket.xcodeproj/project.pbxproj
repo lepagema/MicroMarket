@@ -12,7 +12,7 @@
 		0D675E30176A599D00C0E7E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D675E2F176A599D00C0E7E7 /* CoreGraphics.framework */; };
 		0D675E36176A599D00C0E7E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E34176A599D00C0E7E7 /* InfoPlist.strings */; };
 		0D675E38176A599D00C0E7E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E37176A599D00C0E7E7 /* main.m */; };
-		0D675E3C176A599D00C0E7E7 /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E3B176A599D00C0E7E7 /* MMAppDelegate.m */; };
+		0D675E3C176A599D00C0E7E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E3B176A599D00C0E7E7 /* AppDelegate.m */; };
 		0D675E3E176A599D00C0E7E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E3D176A599D00C0E7E7 /* Default.png */; };
 		0D675E40176A599D00C0E7E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E3F176A599D00C0E7E7 /* Default@2x.png */; };
 		0D675E42176A599D00C0E7E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E41176A599D00C0E7E7 /* Default-568h@2x.png */; };
@@ -29,13 +29,18 @@
 		0D675E60176A599E00C0E7E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D675E2D176A599D00C0E7E7 /* Foundation.framework */; };
 		0D675E68176A599E00C0E7E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E66176A599E00C0E7E7 /* InfoPlist.strings */; };
 		0D675E6B176A599E00C0E7E7 /* MicroMarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E6A176A599E00C0E7E7 /* MicroMarketTests.m */; };
-		0D675E79176B955300C0E7E7 /* MMProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E78176B955300C0E7E7 /* MMProduct.m */; };
-		0D675E7C176B96E200C0E7E7 /* MMMarketDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E7B176B96E200C0E7E7 /* MMMarketDataController.m */; };
+		0D675E7C176B96E200C0E7E7 /* MarketDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E7B176B96E200C0E7E7 /* MarketDataController.m */; };
 		0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */; };
-		0D675ED2176E3D7A00C0E7E7 /* MMCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED1176E3D7900C0E7E7 /* MMCustomer.m */; };
-		0D675ED5176E400D00C0E7E7 /* MMAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED4176E400D00C0E7E7 /* MMAmountFormatter.m */; };
+		0D675ED5176E400D00C0E7E7 /* AmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED4176E400D00C0E7E7 /* AmountFormatter.m */; };
 		0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */; };
 		0D675EDE1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDD1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m */; };
+		0DADA67717761F480055B51B /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67617761F480055B51B /* Customer.m */; };
+		0DADA67A17761F790055B51B /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67917761F790055B51B /* Product.m */; };
+		0DADA67F177620090055B51B /* CustomerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67C177620090055B51B /* CustomerEntity.m */; };
+		0DADA680177620090055B51B /* ProductEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67E177620090055B51B /* ProductEntity.m */; };
+		0DB934FD17723A5300673FE5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB934FC17723A5300673FE5 /* CoreData.framework */; };
+		0DB9350017723B2F00673FE5 /* MicroMarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DB934FE17723B2F00673FE5 /* MicroMarket.xcdatamodeld */; };
+		0DB935071772D9A300673FE5 /* EditCustomerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB935061772D9A300673FE5 /* EditCustomerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +62,8 @@
 		0D675E35176A599D00C0E7E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D675E37176A599D00C0E7E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D675E39176A599D00C0E7E7 /* MicroMarket-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroMarket-Prefix.pch"; sourceTree = "<group>"; };
-		0D675E3A176A599D00C0E7E7 /* MMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAppDelegate.h; sourceTree = "<group>"; };
-		0D675E3B176A599D00C0E7E7 /* MMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAppDelegate.m; sourceTree = "<group>"; };
+		0D675E3A176A599D00C0E7E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D675E3B176A599D00C0E7E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0D675E3D176A599D00C0E7E7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0D675E3F176A599D00C0E7E7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0D675E41176A599D00C0E7E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -78,20 +83,27 @@
 		0D675E67176A599E00C0E7E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D675E69176A599E00C0E7E7 /* MicroMarketTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroMarketTests.h; sourceTree = "<group>"; };
 		0D675E6A176A599E00C0E7E7 /* MicroMarketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MicroMarketTests.m; sourceTree = "<group>"; };
-		0D675E77176B955300C0E7E7 /* MMProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProduct.h; sourceTree = "<group>"; };
-		0D675E78176B955300C0E7E7 /* MMProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProduct.m; sourceTree = "<group>"; };
-		0D675E7A176B96E100C0E7E7 /* MMMarketDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMarketDataController.h; sourceTree = "<group>"; };
-		0D675E7B176B96E200C0E7E7 /* MMMarketDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMarketDataController.m; sourceTree = "<group>"; };
+		0D675E7A176B96E100C0E7E7 /* MarketDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketDataController.h; sourceTree = "<group>"; };
+		0D675E7B176B96E200C0E7E7 /* MarketDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketDataController.m; sourceTree = "<group>"; };
 		0D675ECD176CC15900C0E7E7 /* MMProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProductDetailViewController.h; sourceTree = "<group>"; };
 		0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProductDetailViewController.m; sourceTree = "<group>"; };
-		0D675ED0176E3D7900C0E7E7 /* MMCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCustomer.h; sourceTree = "<group>"; };
-		0D675ED1176E3D7900C0E7E7 /* MMCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCustomer.m; sourceTree = "<group>"; };
-		0D675ED3176E400D00C0E7E7 /* MMAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAmountFormatter.h; sourceTree = "<group>"; };
-		0D675ED4176E400D00C0E7E7 /* MMAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAmountFormatter.m; sourceTree = "<group>"; };
+		0D675ED3176E400D00C0E7E7 /* AmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountFormatter.h; sourceTree = "<group>"; };
+		0D675ED4176E400D00C0E7E7 /* AmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountFormatter.m; sourceTree = "<group>"; };
 		0D675ED9177018B700C0E7E7 /* MMAddCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAddCustomerDetailViewController.h; sourceTree = "<group>"; };
 		0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAddCustomerDetailViewController.m; sourceTree = "<group>"; };
 		0D675EDC1770E4BD00C0E7E7 /* MMEditCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEditCustomerDetailViewController.h; sourceTree = "<group>"; };
 		0D675EDD1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditCustomerDetailViewController.m; sourceTree = "<group>"; };
+		0DADA67517761F480055B51B /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		0DADA67617761F480055B51B /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		0DADA67817761F790055B51B /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		0DADA67917761F790055B51B /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		0DADA67B177620090055B51B /* CustomerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerEntity.h; sourceTree = "<group>"; };
+		0DADA67C177620090055B51B /* CustomerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerEntity.m; sourceTree = "<group>"; };
+		0DADA67D177620090055B51B /* ProductEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductEntity.h; sourceTree = "<group>"; };
+		0DADA67E177620090055B51B /* ProductEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductEntity.m; sourceTree = "<group>"; };
+		0DB934FC17723A5300673FE5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0DB934FF17723B2F00673FE5 /* MicroMarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MicroMarket.xcdatamodel; sourceTree = "<group>"; };
+		0DB935061772D9A300673FE5 /* EditCustomerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditCustomerView.xib; path = ../EditCustomerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,7 @@
 				0D675E2C176A599D00C0E7E7 /* UIKit.framework in Frameworks */,
 				0D675E2E176A599D00C0E7E7 /* Foundation.framework in Frameworks */,
 				0D675E30176A599D00C0E7E7 /* CoreGraphics.framework in Frameworks */,
+				0DB934FD17723A5300673FE5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +153,7 @@
 		0D675E2A176A599D00C0E7E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DB934FC17723A5300673FE5 /* CoreData.framework */,
 				0D675E2B176A599D00C0E7E7 /* UIKit.framework */,
 				0D675E2D176A599D00C0E7E7 /* Foundation.framework */,
 				0D675E2F176A599D00C0E7E7 /* CoreGraphics.framework */,
@@ -151,10 +165,11 @@
 		0D675E31176A599D00C0E7E7 /* MicroMarket */ = {
 			isa = PBXGroup;
 			children = (
-				0D675E3A176A599D00C0E7E7 /* MMAppDelegate.h */,
-				0D675E3B176A599D00C0E7E7 /* MMAppDelegate.m */,
+				0D675E3A176A599D00C0E7E7 /* AppDelegate.h */,
+				0D675E3B176A599D00C0E7E7 /* AppDelegate.m */,
 				0D675E43176A599D00C0E7E7 /* MainStoryboard_iPhone.storyboard */,
 				0D675E46176A599E00C0E7E7 /* MainStoryboard_iPad.storyboard */,
+				0DB935061772D9A300673FE5 /* EditCustomerView.xib */,
 				0D675E49176A599E00C0E7E7 /* MMProductsViewController.h */,
 				0D675E4A176A599E00C0E7E7 /* MMProductsViewController.m */,
 				0D675ECD176CC15900C0E7E7 /* MMProductDetailViewController.h */,
@@ -170,14 +185,19 @@
 				0D675E53176A599E00C0E7E7 /* second.png */,
 				0D675E55176A599E00C0E7E7 /* second@2x.png */,
 				0D675E32176A599D00C0E7E7 /* Supporting Files */,
-				0D675E7A176B96E100C0E7E7 /* MMMarketDataController.h */,
-				0D675E7B176B96E200C0E7E7 /* MMMarketDataController.m */,
-				0D675E77176B955300C0E7E7 /* MMProduct.h */,
-				0D675E78176B955300C0E7E7 /* MMProduct.m */,
-				0D675ED0176E3D7900C0E7E7 /* MMCustomer.h */,
-				0D675ED1176E3D7900C0E7E7 /* MMCustomer.m */,
-				0D675ED3176E400D00C0E7E7 /* MMAmountFormatter.h */,
-				0D675ED4176E400D00C0E7E7 /* MMAmountFormatter.m */,
+				0D675ED3176E400D00C0E7E7 /* AmountFormatter.h */,
+				0D675ED4176E400D00C0E7E7 /* AmountFormatter.m */,
+				0DB934FE17723B2F00673FE5 /* MicroMarket.xcdatamodeld */,
+				0DADA67517761F480055B51B /* Customer.h */,
+				0DADA67617761F480055B51B /* Customer.m */,
+				0DADA67B177620090055B51B /* CustomerEntity.h */,
+				0DADA67C177620090055B51B /* CustomerEntity.m */,
+				0DADA67817761F790055B51B /* Product.h */,
+				0DADA67917761F790055B51B /* Product.m */,
+				0DADA67D177620090055B51B /* ProductEntity.h */,
+				0DADA67E177620090055B51B /* ProductEntity.m */,
+				0D675E7A176B96E100C0E7E7 /* MarketDataController.h */,
+				0D675E7B176B96E200C0E7E7 /* MarketDataController.m */,
 			);
 			path = MicroMarket;
 			sourceTree = "<group>";
@@ -297,6 +317,7 @@
 				0D675E4F176A599E00C0E7E7 /* first@2x.png in Resources */,
 				0D675E54176A599E00C0E7E7 /* second.png in Resources */,
 				0D675E56176A599E00C0E7E7 /* second@2x.png in Resources */,
+				0DB935071772D9A300673FE5 /* EditCustomerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,16 +353,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D675E38176A599D00C0E7E7 /* main.m in Sources */,
-				0D675E3C176A599D00C0E7E7 /* MMAppDelegate.m in Sources */,
+				0D675E3C176A599D00C0E7E7 /* AppDelegate.m in Sources */,
 				0D675E4B176A599E00C0E7E7 /* MMProductsViewController.m in Sources */,
 				0D675E52176A599E00C0E7E7 /* MMCustomersViewController.m in Sources */,
-				0D675E79176B955300C0E7E7 /* MMProduct.m in Sources */,
-				0D675E7C176B96E200C0E7E7 /* MMMarketDataController.m in Sources */,
+				0D675E7C176B96E200C0E7E7 /* MarketDataController.m in Sources */,
 				0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */,
-				0D675ED2176E3D7A00C0E7E7 /* MMCustomer.m in Sources */,
-				0D675ED5176E400D00C0E7E7 /* MMAmountFormatter.m in Sources */,
+				0D675ED5176E400D00C0E7E7 /* AmountFormatter.m in Sources */,
 				0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */,
 				0D675EDE1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m in Sources */,
+				0DB9350017723B2F00673FE5 /* MicroMarket.xcdatamodeld in Sources */,
+				0DADA67717761F480055B51B /* Customer.m in Sources */,
+				0DADA67A17761F790055B51B /* Product.m in Sources */,
+				0DADA67F177620090055B51B /* CustomerEntity.m in Sources */,
+				0DADA680177620090055B51B /* ProductEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +568,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0DB934FE17723B2F00673FE5 /* MicroMarket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0DB934FF17723B2F00673FE5 /* MicroMarket.xcdatamodel */,
+			);
+			currentVersion = 0DB934FF17723B2F00673FE5 /* MicroMarket.xcdatamodel */;
+			path = MicroMarket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0D675E20176A599D00C0E7E7 /* Project object */;
 }

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MMMarketDataController;
+@class MarketDataController;
 
 @interface MMCustomersViewController : UITableViewController
 
-@property (weak, nonatomic) MMMarketDataController *dataController;
+@property (weak, nonatomic) MarketDataController *dataController;
 - (IBAction)buttonTouchUpInside:(id)sender;
 
 @end

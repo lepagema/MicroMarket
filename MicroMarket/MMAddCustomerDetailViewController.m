@@ -7,7 +7,7 @@
 //
 
 #import "MMAddCustomerDetailViewController.h"
-#import "MMCustomer.h"
+#import "MarketDataController.h"
 
 @interface MMAddCustomerDetailViewController ()
 
@@ -50,7 +50,7 @@
         if (self.nameTextField.text.length)
         {
             NSString *name = self.nameTextField.text;
-            self.customer = [[MMCustomer alloc] initWithName:name];
+            [self.dataController addCustomerWithName:name];
         }
     }
     //    else if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"])

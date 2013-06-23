@@ -1,14 +1,14 @@
 //
-//  MMAmountFormatter.m
+//  AmountFormatter.m
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 16.06.13.
 //  Copyright (c) 2013 Self. All rights reserved.
 //
 
-#import "MMAmountFormatter.h"
+#import "AmountFormatter.h"
 
-@implementation MMAmountFormatter
+@implementation AmountFormatter
 
 +(NSDecimalNumber*)roundAmount:(NSDecimalNumber*)amount
 {
@@ -45,12 +45,12 @@
 
 +(NSDecimalNumber*)amountFromEditText:(NSString*)editText;
 {
-    return [MMAmountFormatter roundAmount:[[NSDecimalNumber alloc] initWithString:editText]];
+    return [AmountFormatter roundAmount:[[NSDecimalNumber alloc] initWithString:editText]];
 }
 
 +(NSString*)reformatEditText:(NSString*)editText
 {
-    return [MMAmountFormatter editTextFromAmount:[MMAmountFormatter amountFromEditText:editText]];
+    return [AmountFormatter editTextFromAmount:[AmountFormatter amountFromEditText:editText]];
 }
 
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "MMCustomersViewController.h"
-#import "MMMarketDataController.h"
-#import "MMAmountFormatter.h"
-#import "MMCustomer.h"
+#import "MarketDataController.h"
+#import "AmountFormatter.h"
+#import "Customer.h"
 #import "MMAddCustomerDetailViewController.h"
+#import "MMEditCustomerDetailViewController.h"
 
 @interface MMCustomersViewController ()
 
@@ -44,11 +45,11 @@
     static NSString *CustomerCellIdentifier = @"CustomerCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomerCellIdentifier];
         
-    MMCustomer *customer = [self.dataController customerAtIndex:indexPath.row];
+    Customer *customer = [self.dataController customerAtIndex:indexPath.row];
     double balance = customer.balance.doubleValue;
         
     [cell.textLabel setText:customer.name];
-    [cell.detailTextLabel setText:[MMAmountFormatter textFromAmount:customer.balance]];
+    [cell.detailTextLabel setText:[AmountFormatter textFromAmount:customer.balance]];
 
     UIColor *balanceTextColor;
     if (balance >= 0.0)
@@ -92,21 +93,22 @@
     if([[segue identifier] isEqualToString:@"EditCustomer"])
     {
         [detailController setCustomer:[self.dataController customerAtIndex:[self.tableView indexPathForSelectedRow].row]];
-        [detailController setProducts:[self.dataController products]];
+        [detailController setDataController:self.dataController];
     }
-//    else if ([[segue identifier] isEqualToString:@"AddCustomer"])
-//    {
-//    }
+    else if ([[segue identifier] isEqualToString:@"AddCustomer"])
+    {
+        [detailController setDataController:self.dataController];
+    }
 }
 
 -(IBAction)done:(UIStoryboardSegue *)segue
 {
-    if ([[segue identifier] isEqualToString:@"ReturnAddCustomerInput"])
-    {
-        MMAddCustomerDetailViewController * detailController = [segue sourceViewController];
-        
-        [self.dataController addCustomer:detailController.customer];
-    }
+//    if ([[segue identifier] isEqualToString:@"ReturnAddCustomerInput"])
+//    {
+//        MMAddCustomerDetailViewController * detailController = [segue sourceViewController];
+//        
+//        [self.dataController addCustomer:detailController.customer];
+//    }
 //    else if ([[segue identifier] isEqualToString:@"ReturnEditCustomerInput"])
 //    {
 //    }
@@ -117,10 +119,12 @@
 
 -(IBAction)cancel:(UIStoryboardSegue *)segue
 {
-    if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"] || [[segue identifier] isEqualToString:@"CancelEditCustomerInput"])
-    {
-        [self dismissViewControllerAnimated:YES completion:NULL];
-    }
+//    if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"] || [[segue identifier] isEqualToString:@"CancelEditCustomerInput"])
+//    {
+//        [self dismissViewControllerAnimated:YES completion:NULL];
+//    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Temp for debug

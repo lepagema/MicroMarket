@@ -7,8 +7,9 @@
 //
 
 #import "MMProductDetailViewController.h"
-#import "MMProduct.h"
-#import "MMAmountFormatter.h"
+#import "MarketDataController.h"
+#import "Product.h"
+#import "AmountFormatter.h"
 
 @interface MMProductDetailViewController ()
 
@@ -34,11 +35,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    
     if (self.product)
     {
         self.nameTextField.text = self.product.name;
-        self.priceTextField.text = [MMAmountFormatter editTextFromAmount:self.product.price];
+        self.priceTextField.text = [AmountFormatter editTextFromAmount:self.product.price];
     }
 }
 
@@ -57,16 +58,17 @@
         if (self.nameTextField.text.length && self.priceTextField.text.length)
         {
             NSString *name = self.nameTextField.text;
-            NSDecimalNumber *price = [MMAmountFormatter amountFromEditText:self.priceTextField.text];
+            NSDecimalNumber *price = [AmountFormatter amountFromEditText:self.priceTextField.text];
             
-            if (self.OperationType == EditProduct)
+            if (self.product)
             {
                 self.product.name = name;
                 self.product.price = price;
+                [self.dataController saveData];
             }
-            else if (self.OperationType == AddProduct)
+            else
             {
-                self.product = [[MMProduct alloc] initWithName:name price:price];
+                [self.dataController addProductWithName:name price:price];
             }
         }
     }
@@ -87,7 +89,7 @@
 {
     if (textField == self.priceTextField)
     {
-        self.priceTextField.text = [MMAmountFormatter reformatEditText:self.priceTextField.text];
+        self.priceTextField.text = [AmountFormatter reformatEditText:self.priceTextField.text];
     }
 }
 
