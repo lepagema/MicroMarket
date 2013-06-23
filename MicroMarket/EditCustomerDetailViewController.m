@@ -1,25 +1,25 @@
 //
-//  MMEditCustomerDetailViewController.m
+//  EditCustomerDetailViewController.m
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 18.06.13.
 //  Copyright (c) 2013 Self. All rights reserved.
 //
 
-#import "MMEditCustomerDetailViewController.h"
+#import "EditCustomerDetailViewController.h"
 #import "MarketDataController.h"
 #import "Customer.h"
 #import "Product.h"
 #import "AmountFormatter.h"
 
-@interface MMEditCustomerDetailViewController ()
+@interface EditCustomerDetailViewController ()
 {
     Product *oneAndOnlyProduct;
 }
 
 @end
 
-@implementation MMEditCustomerDetailViewController
+@implementation EditCustomerDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,10 +39,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-//    [self.tableView registerClass:[self.nameCell class] forCellReuseIdentifier:@"NameCell"];
-//    [self.tableView registerClass:[self.paymentCell class] forCellReuseIdentifier:@"PaymentCell"];
-//    [self.tableView registerClass:[self.purchaseCell class] forCellReuseIdentifier:@"PurchaseCell"];
     
     self.nameTextField.delegate = self;
     self.paymentTextField.delegate = self;
@@ -85,91 +81,6 @@
     NSNumber *productCount = [[NSNumber alloc] initWithDouble:self.productStepper.value];
     self.procuctCountLabel.text = [formatter stringFromNumber:productCount];
 }
-
-#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    switch (section) {
-//        case 0:
-//        case 1:
-//            return 1;
-//            
-//        case 2:
-//            return self.products.count;
-//            
-//        default:
-//            return 0;
-//    }
-//    
-//}
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *NameCellIdentifier = @"NameCell";
-//    static NSString *PaymentCellIdentifier = @"PaymentCell";
-//    static NSString *PurchaseCellIdentifier = @"PurchaseCell";
-//
-//    switch (indexPath.section) {
-//        case 0:
-//            return [tableView dequeueReusableCellWithIdentifier:NameCellIdentifier forIndexPath:indexPath];
-//            
-//        case 1:
-//            return [tableView dequeueReusableCellWithIdentifier:PaymentCellIdentifier forIndexPath:indexPath];
-//            
-//        case 2:
-//            return [tableView dequeueReusableCellWithIdentifier:PurchaseCellIdentifier forIndexPath:indexPath];
-//            
-//        default:
-//            return nil;
-//    }
-//}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

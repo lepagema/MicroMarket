@@ -1,19 +1,19 @@
 //
-//  MMAddCustomerDetailViewController.m
+//  AddCustomerDetailViewController.m
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 18.06.13.
 //  Copyright (c) 2013 Self. All rights reserved.
 //
 
-#import "MMAddCustomerDetailViewController.h"
+#import "AddCustomerDetailViewController.h"
 #import "MarketDataController.h"
 
-@interface MMAddCustomerDetailViewController ()
+@interface AddCustomerDetailViewController ()
 
 @end
 
-@implementation MMAddCustomerDetailViewController
+@implementation AddCustomerDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -53,9 +53,9 @@
             [self.dataController addCustomerWithName:name];
         }
     }
-    //    else if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"])
-    //    {
-    //    }
+//    else if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"])
+//    {
+//    }
 }
 
 #pragma mark - Text field delegate

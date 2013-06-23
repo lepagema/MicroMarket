@@ -1,5 +1,5 @@
 //
-//  MMProductDetailViewController.h
+//  ProductDetailViewController.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 15.06.13.
@@ -11,9 +11,9 @@
 @class MarketDataController;
 @class Product;
 
-@interface MMProductDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface ProductDetailViewController : UITableViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) Product *product;
+@property (weak, nonatomic) Product *product; // nil for "Add" or not for "Edit".
 @property (weak, nonatomic) MarketDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

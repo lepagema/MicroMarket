@@ -1,5 +1,5 @@
 //
-//  MMAddCustomerDetailViewController.h
+//  AddCustomerDetailViewController.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 18.06.13.
@@ -10,7 +10,7 @@
 
 @class MarketDataController;
 
-@interface MMAddCustomerDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface AddCustomerDetailViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) MarketDataController *dataController;
 

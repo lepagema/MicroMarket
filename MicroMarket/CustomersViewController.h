@@ -1,5 +1,5 @@
 //
-//  MMCustomersViewController.h
+//  CustomersViewController.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 13.06.13.
@@ -10,9 +10,8 @@
 
 @class MarketDataController;
 
-@interface MMCustomersViewController : UITableViewController
+@interface CustomersViewController : UITableViewController
 
 @property (weak, nonatomic) MarketDataController *dataController;
-- (IBAction)buttonTouchUpInside:(id)sender;
 
 @end

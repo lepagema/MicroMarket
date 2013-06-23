@@ -18,10 +18,10 @@
 		0D675E42176A599D00C0E7E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E41176A599D00C0E7E7 /* Default-568h@2x.png */; };
 		0D675E45176A599E00C0E7E7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E43176A599D00C0E7E7 /* MainStoryboard_iPhone.storyboard */; };
 		0D675E48176A599E00C0E7E7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E46176A599E00C0E7E7 /* MainStoryboard_iPad.storyboard */; };
-		0D675E4B176A599E00C0E7E7 /* MMProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E4A176A599E00C0E7E7 /* MMProductsViewController.m */; };
+		0D675E4B176A599E00C0E7E7 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E4A176A599E00C0E7E7 /* ProductsViewController.m */; };
 		0D675E4D176A599E00C0E7E7 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E4C176A599E00C0E7E7 /* first.png */; };
 		0D675E4F176A599E00C0E7E7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E4E176A599E00C0E7E7 /* first@2x.png */; };
-		0D675E52176A599E00C0E7E7 /* MMCustomersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E51176A599E00C0E7E7 /* MMCustomersViewController.m */; };
+		0D675E52176A599E00C0E7E7 /* CustomersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E51176A599E00C0E7E7 /* CustomersViewController.m */; };
 		0D675E54176A599E00C0E7E7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E53176A599E00C0E7E7 /* second.png */; };
 		0D675E56176A599E00C0E7E7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E55176A599E00C0E7E7 /* second@2x.png */; };
 		0D675E5E176A599E00C0E7E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D675E5D176A599E00C0E7E7 /* SenTestingKit.framework */; };
@@ -30,10 +30,10 @@
 		0D675E68176A599E00C0E7E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D675E66176A599E00C0E7E7 /* InfoPlist.strings */; };
 		0D675E6B176A599E00C0E7E7 /* MicroMarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E6A176A599E00C0E7E7 /* MicroMarketTests.m */; };
 		0D675E7C176B96E200C0E7E7 /* MarketDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675E7B176B96E200C0E7E7 /* MarketDataController.m */; };
-		0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */; };
+		0D675ECF176CC15900C0E7E7 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ECE176CC15900C0E7E7 /* ProductDetailViewController.m */; };
 		0D675ED5176E400D00C0E7E7 /* AmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675ED4176E400D00C0E7E7 /* AmountFormatter.m */; };
-		0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */; };
-		0D675EDE1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDD1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m */; };
+		0D675EDB177018B800C0E7E7 /* AddCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDA177018B800C0E7E7 /* AddCustomerDetailViewController.m */; };
+		0D675EDE1770E4BE00C0E7E7 /* EditCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D675EDD1770E4BE00C0E7E7 /* EditCustomerDetailViewController.m */; };
 		0DADA67717761F480055B51B /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67617761F480055B51B /* Customer.m */; };
 		0DADA67A17761F790055B51B /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67917761F790055B51B /* Product.m */; };
 		0DADA67F177620090055B51B /* CustomerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67C177620090055B51B /* CustomerEntity.m */; };
@@ -69,12 +69,12 @@
 		0D675E41176A599D00C0E7E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0D675E44176A599E00C0E7E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0D675E47176A599E00C0E7E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		0D675E49176A599E00C0E7E7 /* MMProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMProductsViewController.h; sourceTree = "<group>"; };
-		0D675E4A176A599E00C0E7E7 /* MMProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMProductsViewController.m; sourceTree = "<group>"; };
+		0D675E49176A599E00C0E7E7 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		0D675E4A176A599E00C0E7E7 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
 		0D675E4C176A599E00C0E7E7 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		0D675E4E176A599E00C0E7E7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		0D675E50176A599E00C0E7E7 /* MMCustomersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMCustomersViewController.h; sourceTree = "<group>"; };
-		0D675E51176A599E00C0E7E7 /* MMCustomersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCustomersViewController.m; sourceTree = "<group>"; };
+		0D675E50176A599E00C0E7E7 /* CustomersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomersViewController.h; sourceTree = "<group>"; };
+		0D675E51176A599E00C0E7E7 /* CustomersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomersViewController.m; sourceTree = "<group>"; };
 		0D675E53176A599E00C0E7E7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		0D675E55176A599E00C0E7E7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		0D675E5C176A599E00C0E7E7 /* MicroMarketTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicroMarketTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,14 +85,14 @@
 		0D675E6A176A599E00C0E7E7 /* MicroMarketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MicroMarketTests.m; sourceTree = "<group>"; };
 		0D675E7A176B96E100C0E7E7 /* MarketDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketDataController.h; sourceTree = "<group>"; };
 		0D675E7B176B96E200C0E7E7 /* MarketDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketDataController.m; sourceTree = "<group>"; };
-		0D675ECD176CC15900C0E7E7 /* MMProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProductDetailViewController.h; sourceTree = "<group>"; };
-		0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProductDetailViewController.m; sourceTree = "<group>"; };
+		0D675ECD176CC15900C0E7E7 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		0D675ECE176CC15900C0E7E7 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		0D675ED3176E400D00C0E7E7 /* AmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountFormatter.h; sourceTree = "<group>"; };
 		0D675ED4176E400D00C0E7E7 /* AmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountFormatter.m; sourceTree = "<group>"; };
-		0D675ED9177018B700C0E7E7 /* MMAddCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAddCustomerDetailViewController.h; sourceTree = "<group>"; };
-		0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAddCustomerDetailViewController.m; sourceTree = "<group>"; };
-		0D675EDC1770E4BD00C0E7E7 /* MMEditCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEditCustomerDetailViewController.h; sourceTree = "<group>"; };
-		0D675EDD1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditCustomerDetailViewController.m; sourceTree = "<group>"; };
+		0D675ED9177018B700C0E7E7 /* AddCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCustomerDetailViewController.h; sourceTree = "<group>"; };
+		0D675EDA177018B800C0E7E7 /* AddCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCustomerDetailViewController.m; sourceTree = "<group>"; };
+		0D675EDC1770E4BD00C0E7E7 /* EditCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCustomerDetailViewController.h; sourceTree = "<group>"; };
+		0D675EDD1770E4BE00C0E7E7 /* EditCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCustomerDetailViewController.m; sourceTree = "<group>"; };
 		0DADA67517761F480055B51B /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		0DADA67617761F480055B51B /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		0DADA67817761F790055B51B /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -170,16 +170,16 @@
 				0D675E43176A599D00C0E7E7 /* MainStoryboard_iPhone.storyboard */,
 				0D675E46176A599E00C0E7E7 /* MainStoryboard_iPad.storyboard */,
 				0DB935061772D9A300673FE5 /* EditCustomerView.xib */,
-				0D675E49176A599E00C0E7E7 /* MMProductsViewController.h */,
-				0D675E4A176A599E00C0E7E7 /* MMProductsViewController.m */,
-				0D675ECD176CC15900C0E7E7 /* MMProductDetailViewController.h */,
-				0D675ECE176CC15900C0E7E7 /* MMProductDetailViewController.m */,
-				0D675E50176A599E00C0E7E7 /* MMCustomersViewController.h */,
-				0D675E51176A599E00C0E7E7 /* MMCustomersViewController.m */,
-				0D675ED9177018B700C0E7E7 /* MMAddCustomerDetailViewController.h */,
-				0D675EDA177018B800C0E7E7 /* MMAddCustomerDetailViewController.m */,
-				0D675EDC1770E4BD00C0E7E7 /* MMEditCustomerDetailViewController.h */,
-				0D675EDD1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m */,
+				0D675E49176A599E00C0E7E7 /* ProductsViewController.h */,
+				0D675E4A176A599E00C0E7E7 /* ProductsViewController.m */,
+				0D675ECD176CC15900C0E7E7 /* ProductDetailViewController.h */,
+				0D675ECE176CC15900C0E7E7 /* ProductDetailViewController.m */,
+				0D675E50176A599E00C0E7E7 /* CustomersViewController.h */,
+				0D675E51176A599E00C0E7E7 /* CustomersViewController.m */,
+				0D675ED9177018B700C0E7E7 /* AddCustomerDetailViewController.h */,
+				0D675EDA177018B800C0E7E7 /* AddCustomerDetailViewController.m */,
+				0D675EDC1770E4BD00C0E7E7 /* EditCustomerDetailViewController.h */,
+				0D675EDD1770E4BE00C0E7E7 /* EditCustomerDetailViewController.m */,
 				0D675E4C176A599E00C0E7E7 /* first.png */,
 				0D675E4E176A599E00C0E7E7 /* first@2x.png */,
 				0D675E53176A599E00C0E7E7 /* second.png */,
@@ -354,13 +354,13 @@
 			files = (
 				0D675E38176A599D00C0E7E7 /* main.m in Sources */,
 				0D675E3C176A599D00C0E7E7 /* AppDelegate.m in Sources */,
-				0D675E4B176A599E00C0E7E7 /* MMProductsViewController.m in Sources */,
-				0D675E52176A599E00C0E7E7 /* MMCustomersViewController.m in Sources */,
+				0D675E4B176A599E00C0E7E7 /* ProductsViewController.m in Sources */,
+				0D675E52176A599E00C0E7E7 /* CustomersViewController.m in Sources */,
 				0D675E7C176B96E200C0E7E7 /* MarketDataController.m in Sources */,
-				0D675ECF176CC15900C0E7E7 /* MMProductDetailViewController.m in Sources */,
+				0D675ECF176CC15900C0E7E7 /* ProductDetailViewController.m in Sources */,
 				0D675ED5176E400D00C0E7E7 /* AmountFormatter.m in Sources */,
-				0D675EDB177018B800C0E7E7 /* MMAddCustomerDetailViewController.m in Sources */,
-				0D675EDE1770E4BE00C0E7E7 /* MMEditCustomerDetailViewController.m in Sources */,
+				0D675EDB177018B800C0E7E7 /* AddCustomerDetailViewController.m in Sources */,
+				0D675EDE1770E4BE00C0E7E7 /* EditCustomerDetailViewController.m in Sources */,
 				0DB9350017723B2F00673FE5 /* MicroMarket.xcdatamodeld in Sources */,
 				0DADA67717761F480055B51B /* Customer.m in Sources */,
 				0DADA67A17761F790055B51B /* Product.m in Sources */,

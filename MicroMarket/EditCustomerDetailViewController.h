@@ -1,5 +1,5 @@
 //
-//  MMEditCustomerDetailViewController.h
+//  EditCustomerDetailViewController.h
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 18.06.13.
@@ -11,7 +11,7 @@
 @class MarketDataController;
 @class Customer;
 
-@interface MMEditCustomerDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface EditCustomerDetailViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) Customer *customer;
 @property (weak, nonatomic) MarketDataController *dataController;

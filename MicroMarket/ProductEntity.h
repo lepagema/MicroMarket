@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Product.h"
 
+
 @interface ProductEntity : Product
 
 @property (nonatomic, retain) NSNumber * index;

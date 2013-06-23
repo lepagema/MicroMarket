@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Customer.h"
 
+
 @interface CustomerEntity : Customer
 
 @property (nonatomic, retain) NSNumber * index;

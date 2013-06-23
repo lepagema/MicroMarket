@@ -1,23 +1,23 @@
 //
-//  MMCustomersViewController.m
+//  CustomersViewController.m
 //  MicroMarket
 //
 //  Created by Marc-Andre Lepage on 13.06.13.
 //  Copyright (c) 2013 Self. All rights reserved.
 //
 
-#import "MMCustomersViewController.h"
+#import "CustomersViewController.h"
 #import "MarketDataController.h"
-#import "AmountFormatter.h"
 #import "Customer.h"
-#import "MMAddCustomerDetailViewController.h"
-#import "MMEditCustomerDetailViewController.h"
+#import "AmountFormatter.h"
+#import "AddCustomerDetailViewController.h"
+#import "EditCustomerDetailViewController.h"
 
-@interface MMCustomersViewController ()
+@interface CustomersViewController ()
 
 @end
 
-@implementation MMCustomersViewController
+@implementation CustomersViewController
 
 - (void)viewDidLoad
 {
@@ -105,9 +105,6 @@
 {
 //    if ([[segue identifier] isEqualToString:@"ReturnAddCustomerInput"])
 //    {
-//        MMAddCustomerDetailViewController * detailController = [segue sourceViewController];
-//        
-//        [self.dataController addCustomer:detailController.customer];
 //    }
 //    else if ([[segue identifier] isEqualToString:@"ReturnEditCustomerInput"])
 //    {
@@ -119,19 +116,14 @@
 
 -(IBAction)cancel:(UIStoryboardSegue *)segue
 {
-//    if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"] || [[segue identifier] isEqualToString:@"CancelEditCustomerInput"])
+//    if ([[segue identifier] isEqualToString:@"CancelAddCustomerInput"])
 //    {
-//        [self dismissViewControllerAnimated:YES completion:NULL];
+//    }
+//    else if ([[segue identifier] isEqualToString:@"CancelEditCustomerInput"])
+//    {
 //    }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-#pragma mark - Temp for debug
-
-- (IBAction)buttonTouchUpInside:(id)sender
-{
-    [self.tableView reloadData];
 }
 
 @end

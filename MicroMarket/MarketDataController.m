@@ -14,6 +14,7 @@
 #import "ProductEntity.h"
 #import "CustomerEntity.h"
 
+
 @interface MarketDataController()
 {
     NSMutableArray *products;
@@ -25,8 +26,6 @@
     
     NSURL *applicationDocumentsDirectory;
 }
-
--(void)addCustomerWithName:(NSString*)name balance:(NSDecimalNumber*)balance;
 
 @end
 
@@ -69,8 +68,15 @@
              */
             
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            
             [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
-            abort();
+            
+            error = nil;
+            if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+            {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
         }
         
         managedObjectContext = [[NSManagedObjectContext alloc] init];
@@ -108,23 +114,12 @@
             // Handle the error.
         }
         
-        customers = mutableFetchResults;
-        
-//        // Temp:
-//        if (products.count == 0)
-//        {
-//            [self addProductWithName:@"My Product" price:[[NSDecimalNumber alloc] initWithDouble:10.00]];
-//        }
-//        
-//        if (customers.count == 0)
-//        {
-//            [self addCustomerWithName:@"Aurel" balance:[[NSDecimalNumber alloc] initWithDouble:20.00]];
-//            [self addCustomerWithName:@"David" balance:[[NSDecimalNumber alloc] initWithDouble:-50.00]];
-//        }
+        customers = mutableFetchResults;        
     }
     
     return self;
 }
+
 
 #pragma mark - Product Table
 
@@ -175,6 +170,7 @@
     }
 }
 
+
 #pragma mark - Customer Table
 
 -(NSUInteger)customerCount
@@ -224,21 +220,6 @@
     }
 }
 
--(void) addCustomerWithName:(NSString *)name balance:(NSDecimalNumber*)balance
-{
-    CustomerEntity *customer = (CustomerEntity *)[NSEntityDescription insertNewObjectForEntityForName:@"CustomerEntity" inManagedObjectContext:managedObjectContext];
-    
-    customer.name = name;
-    customer.balance = balance;
-    customer.index = [[NSNumber alloc] initWithUnsignedInteger:customers.count];
-    
-    [customers addObject:customer];
-    
-    NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
-        // Handle the error.
-    }
-}
 
 #pragma mark - Context management
 
