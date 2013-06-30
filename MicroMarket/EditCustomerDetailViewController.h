@@ -16,11 +16,4 @@
 @property (weak, nonatomic) Customer *customer;
 @property (weak, nonatomic) MarketDataController *dataController;
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *paymentTextField;
-
-@property (weak, nonatomic) IBOutlet UILabel *productLabel;
-@property (weak, nonatomic) IBOutlet UILabel *procuctCountLabel;
-@property (weak, nonatomic) IBOutlet UIStepper *productStepper;
-
 @end

@@ -11,10 +11,15 @@
 #import "Customer.h"
 #import "Product.h"
 #import "AmountFormatter.h"
+#import "EditableTableViewCell.h"
+#import "PurchaseItem.h"
+#import "PurchaseTableViewCell.h"
 
 @interface EditCustomerDetailViewController ()
 {
-    Product *oneAndOnlyProduct;
+    UITextField *nameTextField;
+    UITextField *paymentTextField;
+    NSMutableArray *purchaseItems;
 }
 
 @end
@@ -39,27 +44,16 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.nameTextField.delegate = self;
-    self.paymentTextField.delegate = self;
-    
-    [self.productStepper addTarget:self action:@selector(stepperValueChangedHandler) forControlEvents:UIControlEventValueChanged];
-    
-    if (self.customer)
+
+    purchaseItems = [[NSMutableArray alloc] init];
+    PurchaseItem *item;
+    for (int i = 0; i < self.dataController.productCount; i++)
     {
-        self.nameTextField.text = self.customer.name;
-    }
-    
-    if (self.dataController &&  [self.dataController productCount] > 0)
-    {
-        oneAndOnlyProduct = [self.dataController productAtIndex:0];
-        self.productLabel.text = oneAndOnlyProduct.name;
-        self.productStepper.enabled = true;
-    }
-    else
-    {
-        self.productLabel.text = @"no product";
-        self.productStepper.enabled = false;
+        item = [[PurchaseItem alloc] init];
+        item.productCount = 0;
+        Product * product = [self.dataController productAtIndex:i];
+        item.productName = product.name;
+        [purchaseItems addObject:item];
     }
 }
 
@@ -69,17 +63,51 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)stepperValueChangedHandler
-{
-    static NSNumberFormatter *formatter = nil;
+#pragma mark - Table View
 
-    if (formatter == nil)
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataController productCount] + 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CustomerNameCellIdentifier = @"CustomerNameCell";
+    static NSString *PaymentCellIdentifier = @"PaymentCell";
+    static NSString *ProductCellIdentifier = @"ProductCell";
+
+    UITableViewCell* cell;
+    switch (indexPath.row)
     {
-        formatter = [[NSNumberFormatter alloc] init];
+        case 0:
+        {
+            EditableTableViewCell* editableCell = [tableView dequeueReusableCellWithIdentifier:CustomerNameCellIdentifier];
+            editableCell.detailTextField.text = self.customer.name;
+            editableCell.detailTextField.delegate = self;
+            nameTextField = editableCell.detailTextField;
+            cell = editableCell;
+            break;
+        }
+            
+        case 1:
+        {
+            EditableTableViewCell* editableCell = [tableView dequeueReusableCellWithIdentifier:PaymentCellIdentifier];
+            editableCell.detailTextField.delegate = self;
+            paymentTextField = editableCell.detailTextField;
+            cell = editableCell;
+            break;
+        }
+            
+        default:
+        {
+            PurchaseTableViewCell* newPurchaseCell = [tableView dequeueReusableCellWithIdentifier:ProductCellIdentifier];
+            newPurchaseCell.purchaseItem = purchaseItems[indexPath.row - 2];
+            cell = newPurchaseCell;
+            break;
+        }
     }
     
-    NSNumber *productCount = [[NSNumber alloc] initWithDouble:self.productStepper.value];
-    self.procuctCountLabel.text = [formatter stringFromNumber:productCount];
+    return cell;
 }
 
 #pragma mark - Table view delegate
@@ -101,21 +129,24 @@
 {
     if ([[segue identifier] isEqualToString:@"ReturnEditCustomerInput"])
     {
-        if (self.nameTextField.text.length)
+        if (nameTextField.text.length)
         {
-            self.customer.name = self.nameTextField.text;
+            self.customer.name = nameTextField.text;
         }
 
-        if (self.paymentTextField.text.length)
+        if (paymentTextField.text.length)
         {
-            NSDecimalNumber *payment = [AmountFormatter amountFromEditText:self.paymentTextField.text];
+            NSDecimalNumber *payment = [AmountFormatter amountFromEditText:paymentTextField.text];
             self.customer.balance = [self.customer.balance decimalNumberByAdding:payment];
         }
         
-        if (self.productStepper.enabled)
+        for (int i = 0; i < self.dataController.productCount; i++)
         {
-            NSDecimalNumber *productCount = [[NSDecimalNumber alloc] initWithDouble:self.productStepper.value];
-            NSDecimalNumber *totalPurchase = [oneAndOnlyProduct.price decimalNumberByMultiplyingBy:productCount];
+            PurchaseItem * purchaseItem = purchaseItems[i];
+            Product * product = [self.dataController productAtIndex:i];
+
+            NSDecimalNumber *productCount = [[NSDecimalNumber alloc] initWithInteger:purchaseItem.productCount];
+            NSDecimalNumber *totalPurchase = [product.price decimalNumberByMultiplyingBy:productCount];
             self.customer.balance = [self.customer.balance decimalNumberBySubtracting:totalPurchase];
         }
         
@@ -136,9 +167,9 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    if (textField == self.paymentTextField)
+    if (textField == paymentTextField)
     {
-        self.paymentTextField.text = [AmountFormatter reformatEditText:self.paymentTextField.text];
+        paymentTextField.text = [AmountFormatter reformatEditText:paymentTextField.text];
     }
 }
 

@@ -38,6 +38,9 @@
 		0DADA67A17761F790055B51B /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67917761F790055B51B /* Product.m */; };
 		0DADA67F177620090055B51B /* CustomerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67C177620090055B51B /* CustomerEntity.m */; };
 		0DADA680177620090055B51B /* ProductEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA67E177620090055B51B /* ProductEntity.m */; };
+		0DB0BC9A1780543400303FE2 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0BC991780543300303FE2 /* EditableTableViewCell.m */; };
+		0DB0BC9D17808A3600303FE2 /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0BC9C17808A3600303FE2 /* PurchaseItem.m */; };
+		0DB0BCA017808AF100303FE2 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0BC9F17808AF100303FE2 /* PurchaseTableViewCell.m */; };
 		0DB934FD17723A5300673FE5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB934FC17723A5300673FE5 /* CoreData.framework */; };
 		0DB9350017723B2F00673FE5 /* MicroMarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DB934FE17723B2F00673FE5 /* MicroMarket.xcdatamodeld */; };
 		0DB935071772D9A300673FE5 /* EditCustomerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB935061772D9A300673FE5 /* EditCustomerView.xib */; };
@@ -101,6 +104,12 @@
 		0DADA67C177620090055B51B /* CustomerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerEntity.m; sourceTree = "<group>"; };
 		0DADA67D177620090055B51B /* ProductEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductEntity.h; sourceTree = "<group>"; };
 		0DADA67E177620090055B51B /* ProductEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductEntity.m; sourceTree = "<group>"; };
+		0DB0BC981780543300303FE2 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
+		0DB0BC991780543300303FE2 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		0DB0BC9B17808A3500303FE2 /* PurchaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseItem.h; sourceTree = "<group>"; };
+		0DB0BC9C17808A3600303FE2 /* PurchaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItem.m; sourceTree = "<group>"; };
+		0DB0BC9E17808AF000303FE2 /* PurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTableViewCell.h; sourceTree = "<group>"; };
+		0DB0BC9F17808AF100303FE2 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		0DB934FC17723A5300673FE5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0DB934FF17723B2F00673FE5 /* MicroMarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MicroMarket.xcdatamodel; sourceTree = "<group>"; };
 		0DB935061772D9A300673FE5 /* EditCustomerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditCustomerView.xib; path = ../EditCustomerView.xib; sourceTree = "<group>"; };
@@ -198,6 +207,12 @@
 				0DADA67E177620090055B51B /* ProductEntity.m */,
 				0D675E7A176B96E100C0E7E7 /* MarketDataController.h */,
 				0D675E7B176B96E200C0E7E7 /* MarketDataController.m */,
+				0DB0BC981780543300303FE2 /* EditableTableViewCell.h */,
+				0DB0BC991780543300303FE2 /* EditableTableViewCell.m */,
+				0DB0BC9B17808A3500303FE2 /* PurchaseItem.h */,
+				0DB0BC9C17808A3600303FE2 /* PurchaseItem.m */,
+				0DB0BC9E17808AF000303FE2 /* PurchaseTableViewCell.h */,
+				0DB0BC9F17808AF100303FE2 /* PurchaseTableViewCell.m */,
 			);
 			path = MicroMarket;
 			sourceTree = "<group>";
@@ -366,6 +381,9 @@
 				0DADA67A17761F790055B51B /* Product.m in Sources */,
 				0DADA67F177620090055B51B /* CustomerEntity.m in Sources */,
 				0DADA680177620090055B51B /* ProductEntity.m in Sources */,
+				0DB0BC9A1780543400303FE2 /* EditableTableViewCell.m in Sources */,
+				0DB0BC9D17808A3600303FE2 /* PurchaseItem.m in Sources */,
+				0DB0BCA017808AF100303FE2 /* PurchaseTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
