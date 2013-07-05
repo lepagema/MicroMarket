@@ -41,6 +41,18 @@
         self.nameTextField.text = self.product.name;
         self.priceTextField.text = [AmountFormatter editTextFromAmount:self.product.price];
     }
+        
+//    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(1, 1, 60, 25) ];
+//
+//    [lbl setText:@"Desc: "];
+//    [lbl setBackgroundColor:[UIColor colorWithWhite:0 alpha:0]];
+//    [lbl setFont:[UIFont boldSystemFontOfSize:12.0]];
+//    
+//    [lbl setTextColor:[UIColor magentaColor]]; // BlueColor
+//    [lbl setTextAlignment:NSTextAlignmentRight];
+//    self.trialTextField.leftView = lbl;
+//    self.trialTextField.leftViewMode = UITextFieldViewModeAlways;
+//    self.trialTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

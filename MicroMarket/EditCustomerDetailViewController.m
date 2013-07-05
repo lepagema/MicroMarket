@@ -65,9 +65,23 @@
 
 #pragma mark - Table View
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataController productCount] + 2;
+    switch (section) {
+        case 0:
+        case 1:
+            // Customer name section and payment section have only 1 row.
+            return 1;
+            
+        default:
+            // Product section rows match with the list of products.
+            return [self.dataController productCount];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,10 +91,11 @@
     static NSString *ProductCellIdentifier = @"ProductCell";
 
     UITableViewCell* cell;
-    switch (indexPath.row)
+    switch (indexPath.section)
     {
         case 0:
         {
+            // Customer name section section has only 1 row.
             EditableTableViewCell* editableCell = [tableView dequeueReusableCellWithIdentifier:CustomerNameCellIdentifier];
             editableCell.detailTextField.text = self.customer.name;
             editableCell.detailTextField.delegate = self;
@@ -91,6 +106,7 @@
             
         case 1:
         {
+            // Payment section has only 1 row.
             EditableTableViewCell* editableCell = [tableView dequeueReusableCellWithIdentifier:PaymentCellIdentifier];
             editableCell.detailTextField.delegate = self;
             paymentTextField = editableCell.detailTextField;
@@ -100,8 +116,9 @@
             
         default:
         {
+            // Product section rows match with the list of products.
             PurchaseTableViewCell* newPurchaseCell = [tableView dequeueReusableCellWithIdentifier:ProductCellIdentifier];
-            newPurchaseCell.purchaseItem = purchaseItems[indexPath.row - 2];
+            newPurchaseCell.purchaseItem = purchaseItems[indexPath.row];
             cell = newPurchaseCell;
             break;
         }
